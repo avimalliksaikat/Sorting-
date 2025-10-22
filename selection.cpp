@@ -1,32 +1,28 @@
 #include<iostream>
 using namespace std;
-void insertionsort(int arr[],int size)
+int main()
 {
-    for(int i=0;i<size-1;i++)
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    for(int i=0;i<n;i++)
     {
         int small = i;
-        for(int j=i+1;j<size-1;j++)
+        for(int j=i+1;j<n;j++)
         {
-            if(arr[j]<arr[i])
+            if(arr[j]<arr[small])
             {
                 swap(arr[j],arr[small]);
             }
         }
+     swap(arr[small],arr[i]);
     }
-}
-int main()
-{
-    int n;
-    cin >> n;
-    int arr[n];
     for(int i=0;i<n;i++)
     {
-        cin >> arr[i] ;
-    }
-    insertionsort(arr,n);
-
-    for(int i=0;i<n;i++)
-    {
-        cout << arr[i];
+        cout << arr[i] << " " ;
     }
 }
